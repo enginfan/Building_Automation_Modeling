@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85D1FD50-1BD2-4E3E-9494-6003B8D0A295}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FirstBlood.ExecuteCmd</RootNamespace>
+    <AssemblyName>FirstBlood.ExecuteCmd</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdWindows">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2021\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrangeRoomCmd.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstBlood.Arrangement\FirstBlood.Arrangement.csproj">
+      <Project>{D3688334-D684-44CF-803D-3FA4AF4A4989}</Project>
+      <Name>FirstBlood.Arrangement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstBlood.Builder\FirstBlood.Builder.csproj">
+      <Project>{87EA5B85-6FF6-49E6-896E-AC9073EA5374}</Project>
+      <Name>FirstBlood.Builder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstBlood.Core\FirstBlood.Core.csproj">
+      <Project>{9CC89C0F-1428-4E4F-859C-8503B82A3245}</Project>
+      <Name>FirstBlood.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstBlood.Transform\FirstBlood.Transform.csproj">
+      <Project>{99D4A2D5-54B6-44EF-9D31-54ABA17735EA}</Project>
+      <Name>FirstBlood.Transform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstBlood.View\FirstBlood.View.csproj">
+      <Project>{AAE0C0A9-FE23-4C39-9235-A1E1D0ED99ED}</Project>
+      <Name>FirstBlood.View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
